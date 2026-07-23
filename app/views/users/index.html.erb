@@ -1,0 +1,9 @@
+<p><%= @users.length %> users found</p>
+
+<% @users.each do |user| %>
+	<p>
+		<strong>Name:</strong> <%= user.name %><br>
+		<strong>Email:</strong> <%= user.email %>
+	</p>
+<% end %>
+
