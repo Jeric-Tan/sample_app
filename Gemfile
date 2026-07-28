@@ -17,6 +17,8 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+
+gem "faker", "~> 2.21.0"
 gem "bcrypt", "~> 3.1.22"
 gem "bootstrap-sass", "~> 3.4.1"
 gem "sassc-rails", "~> 2.1.2"
