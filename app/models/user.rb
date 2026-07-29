@@ -20,18 +20,28 @@ class User < ApplicationRecord
         SecureRandom.urlsafe_base64
     end
 
+    def activate
+        update_columns(activated: true, activated_at: Time.zone.now)
+    end
+
+    def send_activation_email
+        UserMailer.account_activation(self).deliver_now
+    end
+
     def remember
         self.remember_token = User.new_token
         update_attribute(:remember_digest, User.digest(remember_token))
+        remember_digest
     end
 
     def session_token
         remember_digest || remember
     end
 
-    def authenticated?(remember_token)
-        return false if remember_digest.nil?
-        BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    def authenticated?(attribute, token)
+        digest = send("#{attribute}_digest")
+        return false if digest.nil?
+        BCrypt::Password.new(digest).is_password?(token)
     end
 
     def forget
