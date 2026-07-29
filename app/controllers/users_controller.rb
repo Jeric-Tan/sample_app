@@ -67,5 +67,10 @@ class UsersController < ApplicationController
     redirect_to(root_url, status: :see_other) unless current_user.admin?
   end
 
+  private def create_activation_digest
+    self.activation_token  = User.new_token
+    self.activation_digest = User.digest(activation_token)
+  end
+
 end
 
