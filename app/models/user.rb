@@ -66,7 +66,7 @@ class User < ApplicationRecord
     end
 
     def feed
-        Micropost.where("user_id = ?", id)
+        Micropost.where("user_id = ?", id).includes(:user).with_attached_image
     end
     
     private def downcase_email
