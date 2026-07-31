@@ -19,7 +19,7 @@ gem "jbuilder"
 
 gem "image_processing", "~> 1.12.2"
 gem "active_storage_validations", "~> 0.9.8"
-gem "will_paginate", "~> 3.3.1"
+gem "will_paginate", "~> 4.0.1"
 gem "faker", "~> 2.21.0"
 gem "bcrypt", "~> 3.1.22"
 gem "bootstrap-sass", "~> 3.4.1"
