@@ -17,7 +17,7 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem "image_processing", "~> 1.12.2"
+gem "image_processing", "~> 2.0.2"
 gem "active_storage_validations", "~> 0.9.8"
 gem "will_paginate", "~> 3.3.1"
 gem "faker", "~> 2.21.0"
